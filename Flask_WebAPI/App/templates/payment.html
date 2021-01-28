@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% block content %}
+	<div class="content-section">
+		<form id="my-form" method="POST" action="">
+			{{ form.hidden_tag() }}
+			<fieldset class='form-group'>
+				<legend class="border-bottom-mb-4"> Payment Transaction Gateway </legend>
+				<div class='form-group'>
+					{{ form.CreditCardNumber.label(class='form-control-label') }}
+					{% if form.CreditCardNumber.errors %}
+						{{ form.CreditCardNumber(class='form-control form-control-lg is-invalid') }}
+						<div class='invalid-feedback'>
+							{% for error in form.CreditCardNumber.errors %}
+								<span>{{error}}</span>
+							{% endfor %}
+						</div>
+					{% else %}
+						{{ form.CreditCardNumber(class='form-control form-control-lg') }}
+					{%endif%}
+					
+				</div>
+				<div class='form-group'>
+					{{ form.CardHolder.label(class='form-control-label') }}
+					{% if form.CardHolder.errors %}
+						{{ form.CardHolder(class='form-control form-control-lg is-invalid') }}
+						<div class='invalid-feedback'>
+							{% for error in form.CardHolder.errors %}
+								<span>{{error}}</span>
+							{% endfor %}
+						</div>
+					{% else %}
+						{{ form.CardHolder(class='form-control form-control-lg') }}
+					{%endif%}
+				</div>
+				<div class='form-group'>
+					{{ form.ExpirationDate.label(class='form-control-label') }}
+					{% if form.ExpirationDate.errors %}
+						{{ form.ExpirationDate(class='form-control form-control-lg is-invalid') }}
+						<div class='invalid-feedback'>
+							{% for error in form.ExpirationDate.errors %}
+								<span>{{error}}</span>
+							{% endfor %}
+						</div>
+					{% else %}
+						{{ form.ExpirationDate(class='form-control form-control-lg') }}
+					{%endif%}
+				</div>
+				<div class='form-group'>
+					{{ form.SecurityCode.label(class='form-control-label') }}
+					{% if form.SecurityCode.errors %}
+						{{ form.SecurityCode(class='form-control form-control-lg is-invalid') }}
+						<div class='invalid-feedback'>
+							{% for error in form.SecurityCode.errors %}
+								<span>{{error}}</span>
+							{% endfor %}
+						</div>
+					{% else %}
+						{{ form.SecurityCode(class='form-control form-control-lg') }}
+					{%endif%}
+				</div>
+				<div class='form-group'>
+					{{ form.Amount.label(class='form-control-label') }}
+					{% if form.Amount.errors %}
+						{{ form.Amount(class='form-control form-control-lg is-invalid') }}
+						<div class='invalid-feedback'>
+							{% for error in form.Amount.errors %}
+								<span>{{error}}</span>
+							{% endfor %}
+						</div>
+					{% else %}
+						{{ form.Amount(class='form-control form-control-lg') }}
+					{%endif%}
+				</div>
+				<!-- <input type="hidden" name="Test" value="None"> -->
+				<div class='form-group' style="display:none;">
+					{{ form.Test.label(class='form-control-label') }}
+			
+					{{ form.Test(class='form-control form-control-lg') }}
+					
+					
+				</div>
+			</fieldset>
+
+			<div class='form-group'>
+					{{ form.submit(class='btn btn-primary') }}
+			</div>
+			<input class="btn btn-danger" type="reset" value="Reset">
+			<!-- <div class="btn btn-outline-info" onclick="resetForm('my-form')";> -->
+					
+				<!-- <input type="reset" value="Clear"></input> -->
+				<!-- <button type="reset" value="Reset" onclick=resetForm('my-form')>Reset</button> --> 
+			<!-- </div> -->
+			
+		</form>
+	</div>
+{% endblock content %}
