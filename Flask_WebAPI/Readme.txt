@@ -2,6 +2,7 @@
 Flask based Web_API for Credit Card Transaction
 To Run the Project
 1.Clone the project into the directory
+        *https://github.com/Keshavraj024/Flask_WEBAPI.git
 2.Create a Virtual Environment using
   	*python -m venv {name of the env}
 3.Activate the Virtual Environment using
